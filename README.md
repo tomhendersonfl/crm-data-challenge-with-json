@@ -11,40 +11,54 @@ The original data set has data about people and companies,
 and about which person works for which companies as well as
 what their job titles are.  The original data looks like this:
 
-```ruby
-CRM = {
-  :people => [
+```json
+{
+  "people": [
     {
-      :id => 20,
-      :first_name => "Savannah",
-      :last_name => "Clementina",
-      :employments => []
+      "id": 1,
+      "first_name": "Whitney",
+      "last_name": "Domenic",
+      "employments": [ ]
     },
     {
-      :id => 32,
-      :first_name => "Elyse",
-      :last_name => "Jensen",
-      :employments =>
-        [
-          {
-            :company_id => 4,
-            :title => "Chief Communications Consultant"
-          }
-        ]
-    }
+      "id": 3,
+      "first_name": "Elyse",
+      "last_name": "Jensen",
+      "employments": [
+        {
+          "company_id": 4,
+          "title": "Chief Communications Consultant"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "first_name": "Elise",
+      "last_name": "Camylle",
+      "employments": [
+        {
+          "company_id": 1,
+          "title": "Regional Applications Designer"
+        },
+        {
+          "company_id": 9,
+          "title": "Internal Mobility Executive"
+        }
+      ]
+    },
   ],
-  :companies => [
+  "companies": [
     {
-      :id => 0,
-      :name => "Nicolas and Sons"
+      "id": 1,
+      "name": "Mueller LLC"
     },
     {
-      :id => 1,
-      :name => "Mueller LLC"
+      "id": 4,
+      "name": "Schmidt-Rolfson"
     },
     {
-      :id => 2,
-      :name => "Mohr, King and Gleason"
+      "id": 9,
+      "name": "Steuber, Wisozk and Gorczany"
     }
   ]
 }
@@ -55,22 +69,22 @@ CRM = {
 Write some code that will return an array of companies,
 and the people who work for them.  For example:
 
-```ruby
+```js
 [
   {
     name: "Nicolas and Sons",
     employees: [
       {
-        :id => 20,
-        :first_name => "Savannah",
-        :last_name => "Clementina",
-        :title => "Chief Communications Consultant"
+        id: 20,
+        first_name: "Savannah",
+        last_name: "Clementina",
+        title: "Chief Communications Consultant"
       },
       {
-        :id => 46,
-        :first_name => "Elyse",
-        :last_name => "Jensen",
-        :title => "Human Directives Engineer"
+        id: 46,
+        first_name: "Elyse",
+        last_name: "Jensen",
+        title: "Human Directives Engineer"
       },
     ]
   }
@@ -83,23 +97,23 @@ Write some code that will return an array of all the employments,
 including the person name, company name, person id, company id
 and title.
 
-```ruby
+```js
 [
   {
-    :company_id => 4,
-    :company_name => "Nicolas and Sons",
-    :person_id => 20,
-    :person_first_name => "Savannah",
-    :person_last_name => "Clementina",
-    :title => "Chief Communications Consultant"
+    company_id: 4,
+    company_name: "Nicolas and Sons",
+    person_id: 20,
+    person_first_name: "Savannah",
+    person_last_name: "Clementina",
+    title: "Chief Communications Consultant"
   },
   {
-    :company_id => 6,
-    :company_name => "Mueller LLC",
-    :person_id => 20,
-    :person_first_name => "Elyse",
-    :person_last_name => "Jensen",
-    :title => "Human Directives Engineer"
+    company_id: 6,
+    company_name: "Mueller LLC",
+    person_id: 20,
+    person_first_name: "Elyse",
+    person_last_name: "Jensen",
+    title: "Human Directives Engineer"
   },
 ]
 ```
@@ -110,36 +124,17 @@ Write some code that will return an array of all the people
 who have no employments.  The resulting hashes in the array should
 _not_ include the `:employments` key.
 
-```ruby
+```js
 [
   {
-    :id => 20,
-    :first_name => "Savannah",
-    :last_name => "Clementina"
+    id: 20,
+    first_name: "Savannah",
+    last_name: "Clementina"
   },
   {
-    :id => 32,
-    :first_name => "Elyse",
-    :last_name => "Jensen",
+    id: 32,
+    first_name: "Elyse",
+    last_name: "Jensen",
   }
 ]
 ```
-
-## Test Data
-
-Test data has been provided in the `data.rb` file.
-
-## Process
-
-Write all of this test-first.  In your specs, don't use the
-test data from `data.rb` - instead, write your own data
-structures that are similar to the `CRM` data.
-
-Then, in IRB, run your code against the test data to
-see it in action.
-
-## Bonus
-
-Write a command line tool that will print this data in a
-pretty way to the terminal.
-

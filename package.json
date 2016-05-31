@@ -1,0 +1,27 @@
+{
+  "name": "crm-data-challenge-with-json",
+  "version": "1.0.0",
+  "description": "You just started a new job.  Your boss comes over and says that their CRM (customer-relationship-management) app is too hard to work with, and that you need to do some data transformation.  They tell you that you will get a big hash of all the data, and you need to write some code that will take that data and convert it to other data structures more useful to the business.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gSchool/crm-data-challenge-with-json.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gSchool/crm-data-challenge-with-json/issues"
+  },
+  "homepage": "https://github.com/gSchool/crm-data-challenge-with-json#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}

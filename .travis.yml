@@ -1,5 +1,0 @@
-language: ruby
-rvm:
-- 2.1.1
-branches: all
-script: bundle exec rspec
